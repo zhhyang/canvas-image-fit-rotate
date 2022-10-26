@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>JS Bin</title>
+    <title>使用canvas模拟图像 object-fit，并支持旋转图片 </title>
   </head>
   <body>
     <div>
@@ -14,10 +14,10 @@
       />
     </div>
     <div>
-      容器宽度<input type="text" id="widthInput" value="100" /> 容器高度<input
+      容器宽度<input type="text" id="widthInput" value="375" /> 容器高度<input
         type="text"
         id="heightInput"
-        value="200"
+        value="667"
       />
     </div>
     <div>
@@ -28,8 +28,7 @@
         <option value="STRETCH">STRETCH</option>
       </select>
     </div>
-    <button id="rotate" onclick="onRotate()">旋转</button>
-    <div><button onclick="createCanvas()">生成</button></div>
+    <div><button onclick="createCanvas()">生成</button><button id="rotate" onclick="onRotate()">旋转</button></div>
     <div id="imgResult"></div>
     <canvas id="canvas"></canvas>
     <script>
@@ -41,6 +40,8 @@
       const heightInput = document.getElementById("heightInput");
       const typeSelect = document.getElementById("typeSelect");
       const imgResult = document.getElementById("imgResult");
+      createCanvas()
+
       function onRotate() {
         rotation += 90;
         createCanvas();
